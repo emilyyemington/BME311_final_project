@@ -12,10 +12,10 @@ dia_time = .7 * time_per_beat;% amount of time in diastole
 syms t v i % v is V_0, while i is used to adjust time to zero
 
 syms S(t,i) % Pressure in systole
-S(t) = 0 + (v - 0)*exp(-(t-i)/TAU);% systole equation
+S(t) = V_INF + (v - V_INF)*exp(-(t-i)/TAU);% systole equation
 
 syms D(t,i) % Pressure in diastole
-D(t) = V_INF + (v - V_INF)*exp(-(t-i)/TAU);% diastole equation
+D(t) = 0 + (v - 0)*exp(-(t-i)/TAU);% diastole equation
 
 figure("Name","Pressure vs Time") % creates figure
 
