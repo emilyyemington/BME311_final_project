@@ -10,13 +10,15 @@ data = readmatrix(fullFileName);
 data = data(2:end, :);
 
 distance=1.24; %carotid to ankle, meters
-initial=20; %initial time point
-final=23; %ending time point
 
 time=data(:,1);
 ecg=data(:,2);
 mic=data(:,3);
 pressure=data(:,4);
+
+initial=rand*(max(time)-min(time)-3)+min(time); %initial time point
+final=initial+3; %ending time point
+
 
 %%
 subplot(311);plot(time,ecg,'o');xlim([initial final]);ylabel('ECG')
