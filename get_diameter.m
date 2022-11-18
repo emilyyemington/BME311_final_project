@@ -22,4 +22,6 @@ radius_y=(rssq([ys_y(2)-ys_y(1),xs_y(2)-xs_y(1)])/2)/scale;
 [xs_x, ys_x]=getpts;
 radius_x=(rssq([ys_x(2)-ys_x(1),xs_x(2)-xs_x(1)])/2)/scale;
 area=pi*radius_x*radius_y  %cm2
+
+close all
 %%
