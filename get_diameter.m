@@ -5,10 +5,13 @@ clear;clc;
 [file, folder]=uigetfile('*');
 fullFileName = fullfile(folder, file);
 videoObject = VideoReader(fullFileName);
-implay(fullFileName)   %Find Systolic or Diastolic frame
+m1 = implay(fullFileName);   %Find Systolic or Diastolic frame
 %% Measure Area
 
 frame=input("frame: ");
+
+close(m1)
+
 frames=floor(videoObject.Duration*videoObject.FrameRate);
 image = read(videoObject,frame);
 scale = 155;              %pixels per centimeter
